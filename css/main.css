@@ -1,27 +1,20 @@
 /*import fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Tiro+Kannada&display=swap");
 
+/* custom properties */
+:root {
+	--line-height: 2em;
+	--blue-color: #00bfff;
+}
+
+/*selectors*/
 body {
 	font-family: "Montserrat", sans-serif;
 	margin: 0;
 }
 
-.image1-bg {
-	background: #307d99 url("../images/oranges.jpg");
-	color: white;
-	text-align: center;
-	padding-bottom: 4em;
-}
-
 header {
 	padding: 1em 0;
-}
-
-.image1-bg a {
-	color: white;
-	text-decoration: none;
-	font-weight: bold;
-	font-size: 1.2rem;
 }
 
 section {
@@ -37,17 +30,12 @@ h1 span {
 	text-transform: uppercase;
 	display: block;
 	font-size: 1.5rem;
+	position: relative;
+	z-index: 1;
 }
 
-.image1-bg p {
-	font-weight: bold;
-	margin: 0 1em 3em;
-}
-
-.city-form {
-	background-color: white;
-	margin: 2em -1em 0;
-	padding: 2em;
+p {
+	line-height: var(--line-height);
 }
 
 label {
@@ -68,14 +56,6 @@ input[type="text"] {
 	margin-top: 1.2em;
 }
 
-.city-form p {
-	color: gray;
-	margin-bottom: 1.5em;
-	font-weight: normal;
-	font-size: 0.9em;
-	margin-top: 0.3em;
-}
-
 input[type="button"] {
 	background-color: #f89104;
 	border: none;
@@ -88,6 +68,177 @@ input[type="button"] {
 	cursor: pointer;
 }
 
+img {
+	width: 100%;
+}
+
+h2 {
+	text-transform: uppercase;
+	/* so i can add a blue underscore effect */
+	position: relative;
+}
+
+/* adds tha blue effect under healthy and authentic and sets it behind it */
+h1 span::before {
+	content: "";
+	position: absolute;
+	width: 3em;
+	background: var(--blue-color);
+	height: 0.4em;
+	bottom: 0;
+	/* makes it so it goes behind text */
+	z-index: -1;
+	margin-left: -0.3em;
+}
+
+h2::before {
+	content: "";
+	position: absolute;
+	width: 7em;
+	background: var(--blue-color);
+	height: 0.4em;
+	bottom: 0;
+	z-index: -1;
+	margin-left: -0.3em;
+}
+
+/* class selectors */
+.image1-bg {
+	background: #307d99 url("../images/oranges.jpg");
+	/*makes it so oranges appear, changes what part of picture shows*/
+	background-position: 12% 83%;
+	color: white;
+	text-align: center;
+	padding-bottom: 4em;
+}
+.image1-bg p {
+	font-weight: bold;
+	margin: 0 1em 3em;
+}
+.image1-bg a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.city-form {
+	background-color: white;
+	margin: 2em -1em 0;
+	padding: 2em;
+}
+.city-form p {
+	color: gray;
+	margin-bottom: 1.5em;
+	font-weight: normal;
+	font-size: 0.9em;
+	margin-top: 0.3em;
+}
+
+.authentic {
+	margin: 0;
+}
+
+.right-col {
+	text-align: center;
+	margin: 3em 1em;
+}
+
+/* hover states */
 input[type="button"]:hover {
 	background-color: #d67d00;
+}
+
+/* media queries for different screen sizes for responsive design */
+@media (min-width: 730px) {
+	section {
+		margin: 0 4em;
+	}
+	.city-form {
+		margin: em -4em 0;
+	}
+}
+
+@media (min-width: 930px) {
+	.image1-bg {
+		text-align: left;
+	}
+
+	.image1-bg p {
+		margin: 0 0 3em;
+	}
+
+	.image1-bg section {
+		width: 65%;
+	}
+
+	.city-form {
+		margin: 2em 0 0;
+		padding: 2em;
+		border-radius: 0.5em;
+		box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+	}
+
+	form {
+		display: flex;
+	}
+
+	.form-left {
+		width: 70%;
+	}
+
+	label {
+		margin: 0;
+	}
+
+	input[type="button"] {
+		height: fit-content;
+		font-size: 1.1em;
+		margin-left: 1em;
+		margin-top: 2.2em;
+		padding: 0.7em 0;
+		width: 30%;
+	}
+
+	.image1-bg p {
+		margin-bottom: 0;
+	}
+
+	section.authentic {
+		display: grid;
+		grid-template-columns: repeat(2, 50%);
+		grid-template-areas: "bowl content";
+	}
+
+	.right-col {
+		grid-area: content;
+		padding: 0 10%;
+		text-align: left;
+		align-self: center;
+	}
+
+	img {
+		grid-area: bowl;
+	}
+
+	h2 {
+		margin: 0;
+	}
+}
+
+/*animation*/
+.top, .city-form {
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-2em);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
