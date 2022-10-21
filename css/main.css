@@ -144,6 +144,18 @@ h2::before {
 	margin: 3em 1em;
 }
 
+/*searching overlay*/
+.overlay{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,.9);
+    z-index:1;
+    place-content: center;
+    color: white;
+    display: none;
+}
+
 /* hover states */
 input[type="button"]:hover {
 	background-color: #d67d00;

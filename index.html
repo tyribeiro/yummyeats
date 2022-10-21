@@ -6,8 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="css/main.css" />
-	</head>
+        
+    </head>
 	<body>
+        <div class="overlay" id="overlay">
+            <h3>SEARCHING NOW...</h3>
+        </div>
 		<div class="image1-bg">
 			<section class="top">
 				<!--logo on top -->
@@ -39,7 +43,7 @@
 							<input type="text" name="city" id="city" />
 							<p class="example">Example: "San Diego"</p>
 						</div>
-						<input type="button" name="find" value="Find Food Now" />
+						<input type="button" name="find" id="find-btn" value="Find Food Now" />
 					</form>
 				</div>
 			</section>
@@ -62,4 +66,5 @@
 			<img src="images/food.jpg" alt="picture of food" />
 		</section>
 	</body>
+    <script src="src/index.js"></script>
 </html>
