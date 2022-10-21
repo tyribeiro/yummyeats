@@ -156,6 +156,22 @@ h2::before {
     display: none;
 }
 
+footer{
+    text-align: center;
+    color: plum;
+    font-weight: bold;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+footer a {
+    color: plum;
+    font-weight: bold;
+}
+
+footer a:hover{
+    color: rgb(144, 7, 144);
+}
 
 
 /* hover states */
