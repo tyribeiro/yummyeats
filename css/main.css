@@ -156,6 +156,8 @@ h2::before {
     display: none;
 }
 
+
+
 /* hover states */
 input[type="button"]:hover {
 	background-color: #d67d00;
@@ -253,4 +255,23 @@ input[type="button"]:hover {
 		opacity: 1;
 		transform: translateY(0);
 	}
+}
+
+.animate-overlay{
+    animation: overlay 3s forwards;
+}
+
+@keyframes overlay {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }
